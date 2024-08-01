@@ -8,7 +8,7 @@ import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 export default class ExampleExtension extends Extension {
     enable() {
         // Create a panel button
-        this._indicator = new PanelMenu.Button(0.0, this.metadata.name, false);
+        this._indicator = new PanelMenu.Button(0.1, this.metadata.name, false);
 
         // Add an icon
         const icon = new St.Icon({
