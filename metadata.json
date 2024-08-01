@@ -4,5 +4,6 @@
   "uuid": "ramezani.m@arpc.ir.gnome.user.indicator",
   "shell-version": [
     "46"
-  ]
+  ],
+"gettext-domain": "example@gjs.guide"  
 }
