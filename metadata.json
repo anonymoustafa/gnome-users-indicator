@@ -1,9 +1,11 @@
 {
-  "name": "ramezani.m@arpc.ir.gnome.user.indicator",
-  "description": "ramezani.m@arpc.ir.gnome.user.indicator",
-  "uuid": "ramezani.m@arpc.ir.gnome.user.indicator",
-  "shell-version": [
-    "46"
-  ],
-"gettext-domain": "example@gjs.guide"  
+    "uuid": "my-extension@domain.com",
+    "name": "My Extension",
+    "description": "A simple GNOME Shell extension example.",
+    "version": 1,
+    "shell-version": ["40", "41", "42", "43"],
+    "stylesheets": ["stylesheet.css"],
+    "url": "https://example.com",
+    "gettext-domain": "my-extension"
 }
+
