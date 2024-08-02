@@ -11,47 +11,17 @@ class Indicator extends PanelMenu.Button {
     _init() {
         super._init(0.0, _('Hello World Indicator'));
 
-        // Add a label with "Hello World" text
-        this.label = new St.Label({
+        // Replace the icon with a text label
+        this.add_child(new St.Label({
             text: 'Hello World',
-            style_class: 'hello-world-label',  // Assign a style class
+            style_class: 'system-status-icon',
+        }));
+
+        let item = new PopupMenu.PopupMenuItem(_('Show Notification'));
+        item.connect('activate', () => {
+            Main.notify(_('Whatʼs up, folks?'));
         });
-        this.add_child(this.label);
-
-        // Popup menu items
-        this._buildMenu();
-    }
-
-    _buildMenu() {
-        // First menu item
-        let showNotificationItem = new PopupMenu.PopupMenuItem(_('Show Notification'));
-        showNotificationItem.connect('activate', () => {
-            Main.notify(_('Hello from your GNOME extension!'));
-        });
-        this.menu.addMenuItem(showNotificationItem);
-
-        // Second menu item
-        let updateTextItem = new PopupMenu.PopupMenuItem(_('Update Text'));
-        updateTextItem.connect('activate', () => {
-            this.label.set_text(_('Updated Hello World!'));
-        });
-        this.menu.addMenuItem(updateTextItem);
-
-        // Separator
-        this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        // Quit menu item
-        let quitItem = new PopupMenu.PopupMenuItem(_('Quit'));
-        quitItem.connect('activate', () => {
-            this._quit();
-        });
-        this.menu.addMenuItem(quitItem);
-    }
-
-    _quit() {
-        // Add logic for quitting the extension or cleaning up
-        Main.notify(_('Quitting...'));
-        // Here you could do more cleanup if necessary
+        this.menu.addMenuItem(item);
     }
 });
 
@@ -67,4 +37,5 @@ export default class MyExtension extends Extension {
         this._indicator = null;
     }
 }
+
 
